@@ -1,0 +1,100 @@
+.App {
+  display: grid;
+  grid-template-areas: "options content";
+  grid-template-columns: 50% 50%;
+  width: 100vw;
+  height: 60vh;
+  margin: 20vh 0;
+  text-align: center;
+  font-size: 21px;
+  user-select: none;
+}
+.App h1 {
+  font-weight: lighter;
+  font-size: 48px;
+}
+.App .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-right: 1px solid #0a8dff;
+  grid-area: options;
+}
+.App .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: content;
+}
+.App .content .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+.App .content .container .generatePassword {
+  font-family: inherit;
+  font-size: 48px;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 250ms ease-out;
+  outline: none;
+}
+.App .content .container .generatePassword:hover,
+.App .content .container .generatePassword:focus {
+  text-shadow: 0 0 10px #0a8dff;
+  opacity: 1;
+}
+.App .content .container .generatePassword:active {
+  text-shadow: none;
+}
+.App .content .container .password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+.App .content .container .password input,
+.App .content .container .password button {
+  position: relative;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 48px;
+}
+.App .content .container .password input input,
+.App .content .container .password button input {
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
+  max-width: 100vh;
+  overflow: hidden;
+}
+.App .content .container .password input .icon-clipboard,
+.App .content .container .password button .icon-clipboard {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  opacity: 0.1;
+  z-index: -1;
+}
+@media screen and (max-width: 600px) {
+  .App {
+    grid-template-columns: 100%;
+    grid-template-rows: "content" 50% "options" 50%;
+  }
+}
