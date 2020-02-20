@@ -89,6 +89,7 @@ function App() {
                             value={options.length}
                             text="Length"
                         />
+                        <input type="submit" aria-hidden hidden />
                     </form>
                     <Input
                         type="toggle"
