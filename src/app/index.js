@@ -19,7 +19,6 @@ function App() {
     const { result, dencrypt } = useDencrypt();
 
     const inputPassword = createRef();
-    const inputLength = createRef();
     const notification = createRef();
 
     const newPassword = e => {
@@ -48,8 +47,6 @@ function App() {
                   )
                 : "*".repeat(options.length[0])
         );
-        // inputLength.current.blur()
-        console.log(inputLength)
     };
 
     const copyPassword = e => {
@@ -83,7 +80,6 @@ function App() {
                 <div className="wrapper">
                     <form onSubmit={newPassword}>
                         <Input
-                            ref={inputLength}
                             type="number"
                             name="length"
                             value={options.length}
