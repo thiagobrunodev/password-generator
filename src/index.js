@@ -4,6 +4,12 @@ import './index.css';
 import App from './app';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootEl = document.getElementById('root')
+
+if (rootEl.hasChildNodes()) {
+    ReactDOM.hydrate(<App />, rootEl);
+} else {
+    ReactDOM.render(<App />, rootEl);
+}
 
 serviceWorker.register();
