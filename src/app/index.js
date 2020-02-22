@@ -1,4 +1,5 @@
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useEffect } from "react";
+import ReactGA from 'react-ga';
 import { useDencrypt } from "use-dencrypt-effect";
 
 import "./App.scss";
@@ -20,6 +21,11 @@ function App() {
 
     const inputPassword = createRef();
     const notification = createRef();
+
+    useEffect(() => {
+        ReactGA.initialize('UA-129270019-3')
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
 
     const newPassword = e => {
         e.preventDefault();
