@@ -17,10 +17,10 @@ function Input(props) {
                         type="checkbox"
                         style={{ opacity: "0", position: "absolute" }}
                     />
-                    <label htmlFor={props.name} className="value">
+                    <label translate="no" htmlFor={props.name} className="value">
                         {props.value[0] ? "OK" : "__"}
                     </label>
-                    <label htmlFor={props.name}>{props.text}</label>
+                    <label translate="no" htmlFor={props.name}>{props.text}</label>
                 </div>
             );
         case "number":
